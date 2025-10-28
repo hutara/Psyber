@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Psyber | Live audio-visual coding in Javascript for the browser</title>
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Psyber | Live audio-visual coding in the browser" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dilber.io" />
+  <meta property="og:image" content="./images/demo.png" />
+  <link rel="stylesheet" crossOrigin="anonymous" type="text/css" href="./resources/dilber.css">
+  <link rel="stylesheet" type="text/css" href="./resources/selection-fix.css">
+  <script src='./resources/external/babel.min.js'></script>
+</head>
+<body>
+  <span class="camera">📹</span>
+  <canvas id='metronome'></canvas>
+  <header>
+    <h1 id="logo" onclick="location.reload()">Psyber</h1>
+    <select id='examples'></select>
+    <span class="themesLabel">theme:</span> 
+    <img id='theme' src='./resources/themes/noir.png'></img>
+    <div id='themes'>
+      <ul>
+        <li><img src='./resources/themes/apollo.png' /></li>
+        <li><img src='./resources/themes/battlestation.png' /></li>
+        <li><img src='./resources/themes/lotus.png' /></li>
+        <li><img src='./resources/themes/marble.png' /></li>
+        <li><img src='./resources/themes/murata.png' /></li>
+        <li><img src='./resources/themes/ninetynine.png' /></li>
+        <li><img src='./resources/themes/noir.png' /></li>
+        <li><img src='./resources/themes/nord.png' /></li>
+        <li><img src='./resources/themes/sonicpi.png' /></li>
+        <li><img src='./resources/themes/soyuz.png' /></li>
+        <li><img src='./resources/themes/zenburn.png' /></li>
+        <li><img src='./resources/themes/bluewin.png' /></li>
+        <li><img src='./resources/themes/pinkpanter.png' /></li>
+      </ul>
+    </div>
+    <input type="file" onchange="importSamples(this.files)" id="samplesInput" style="display: none;" name="files[]" multiple accept=".wav,.mp3,.aif,.aiff" />
+    <button id='uploadbtn' onclick='document.getElementById("samplesInput").click()'>import samples</button>
+    <input type="file" id="fileInput" style="display: none;">
+    <button id='loadbtn'>load project</button>
+    <button id='savebtn'>save project</button>
+
+    <button id='sharebtn'>share</button>
+    <button id='connectbtn'>perform</button>
+    <button id='middibtn'>midi out</button>
+    <select id='midiOutputSelect'>device list:</select>
+    <button id='fullscreenbtn'>fullscreen</button>
+    <span id='reference'>
+      <ul>
+        <li><a target='_blank' href='https://github.com/Omodaka9375/dilber'>code</a></li>
+        <li><a target='_blank' href='./docs/index.html'>docs</a></li>
+        <li><a target='_blank' href='https://coff.ee/omodaka9375'>support</a></li>
+        <li><a id="version"></a></li>
+      </ul>
+    </span>
+  </header>
+  <div id='editor' data-after=""></div></div>
+  <button id='hidebtn'>&#9650;</button>
+  <canvas id='graphics'></canvas>
+  <script src='./resources/dilber.js'></script>
+  <script src='./resources/musicgen.js' type="module"></script>
+</body>
+</html>
