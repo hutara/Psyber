@@ -1,0 +1,41 @@
+/* Enhanced selection styles for editor */
+.CodeMirror-selected { 
+    background: rgba(66, 139, 202, 0.35) !important;
+}
+.CodeMirror-focused .CodeMirror-selected { 
+    background: rgba(66, 139, 202, 0.45) !important;
+}
+.CodeMirror-crosshair { 
+    cursor: text; 
+}
+.CodeMirror-line::selection, 
+.CodeMirror-line > span::selection, 
+.CodeMirror-line > span > span::selection { 
+    background: rgba(66, 139, 202, 0.45) !important;
+}
+.CodeMirror-line::-moz-selection, 
+.CodeMirror-line > span::-moz-selection, 
+.CodeMirror-line > span > span::-moz-selection { 
+    background: rgba(66, 139, 202, 0.45) !important;
+}
+
+/* Additional improvements for text selection */
+.CodeMirror {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.CodeMirror-lines {
+    cursor: text;
+}
+
+/* Improve visibility during selection */
+.CodeMirror.cm-fat-cursor .CodeMirror-cursor {
+    background-color: rgba(20, 255, 165, 0.5);
+}
+
+/* Better contrast for selected text */
+.CodeMirror-selectedtext {
+    color: #000 !important;
+    background: rgba(66, 139, 202, 0.45) !important;
+}

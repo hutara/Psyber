@@ -1,0 +1,67 @@
+/* Fix selection issues */
+.CodeMirror {
+    position: relative;
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: 'Consolas', monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.CodeMirror-lines {
+    padding: 8px 0;
+    cursor: text;
+}
+
+.CodeMirror-line {
+    padding: 0 8px;
+    line-height: 1.6;
+}
+
+/* Improve selection visibility */
+.CodeMirror-selected { 
+    background: rgba(66, 139, 202, 0.35) !important;
+}
+
+.CodeMirror-focused .CodeMirror-selected { 
+    background: rgba(66, 139, 202, 0.45) !important;
+}
+
+/* Ensure proper text selection */
+.CodeMirror-scroll {
+    position: relative;
+}
+
+.CodeMirror pre.CodeMirror-line {
+    z-index: 2;
+    position: relative;
+    white-space: pre !important;
+    word-wrap: normal;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Better cursor */
+.CodeMirror-cursor {
+    border-left: 2px solid black !important;
+    margin-left: 0;
+    width: 0;
+    z-index: 3;
+}
+
+/* Prevent unwanted text selection */
+.CodeMirror-scroll {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    user-select: text !important;
+}
+
+/* Improve line selection */
+.CodeMirror-code {
+    outline: none;
+}
+
+/* Highlight active line better */
+.CodeMirror-activeline-background {
+    background: rgba(232, 242, 255, 0.8) !important;
+}
